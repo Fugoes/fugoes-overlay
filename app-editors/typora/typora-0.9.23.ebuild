@@ -1,7 +1,7 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
-EAPI="5"
+EAPI=5
 SLOT="0"
 DESCRIPTION="A minimal Markdown reading & writing app."
 HOMEPAGE="https://typora.io"
@@ -10,6 +10,7 @@ LICENSE="Typora"
 SRC_URI="https://typora.io/./linux/typora_0.9.23_amd64.deb"
 RESTRICT="mirror"
 S=${WORKDIR}
+RESTRICT="mirror strip"
 
 src_compile() {
 	tar xf ${WORKDIR}/data.tar.xz
