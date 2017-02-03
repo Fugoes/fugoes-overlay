@@ -8,6 +8,7 @@ HOMEPAGE="https://typora.io"
 KEYWORDS="~amd64"
 LICENSE="Typora"
 SRC_URI="https://typora.io/./linux/typora_0.9.23_amd64.deb"
+RESTRICT="mirror"
 S=${WORKDIR}
 
 src_compile() {
@@ -19,6 +20,7 @@ src_compile() {
 src_install() {
 	dodir /usr/share/typora
 	insinto /usr/share/typora
+	insopts -m0755
 	doins -r ${S}/usr/share/typora/*
 
 	dodir /usr/share/applications
