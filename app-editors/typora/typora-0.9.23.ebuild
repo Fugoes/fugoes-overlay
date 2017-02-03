@@ -12,27 +12,29 @@ RESTRICT="mirror"
 S=${WORKDIR}
 
 src_compile() {
-	tar xf ${WORKDIR}/data.tar.xz
+	tar xf data.tar.xz
+	mv usr/share/typora/Typora .
+	mv usr/share/typora/libnode.so .
 	rm control.tar.gz data.tar.xz debian-binary
-	rm usr/doc usr/lintian -rf
+	rm -rf usr/doc usr/lintian
 }
 
 src_install() {
 	dodir /usr/share/typora
-	insinto /usr/share/typora
+	into /usr/share/typora
 	doins -r ${S}/usr/share/typora/*
-	fperms 755 /usr/share/typora/Typora
-	fperms 755 /usr/share/typora/libnode.so
+	doexe ${S}/Typora
+	dolib.so ${S}/libnode.so
 
 	dodir /usr/share/applications
-	insinto /usr/share/applications
+	into /usr/share/applications
 	doins ${S}/usr/share/applications/typora.desktop
 
 	dodir /usr/share/icons
 	insinto /usr/share/icons
 	doins -r ${S}/usr/share/icons/hicolor
 
-	dosym /usr/share/typora/Typora /usr/bin/typora
+	dosym ../share/typora/Typora /usr/bin/typora
 }
 
 pkg_postinst(){
