@@ -1,8 +1,8 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
-SLOT="0"
 EAPI="5"
+SLOT="0"
 DESCRIPTION="A minimal Markdown reading & writing app."
 HOMEPAGE="https://typora.io"
 KEYWORDS="~amd64"
