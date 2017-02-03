@@ -20,8 +20,9 @@ src_compile() {
 src_install() {
 	dodir /usr/share/typora
 	insinto /usr/share/typora
-	insopts -m0755
 	doins -r ${S}/usr/share/typora/*
+	fperms 755 /usr/share/typora/Typora
+	fperms 755 /usr/share/typora/libnode.so
 
 	dodir /usr/share/applications
 	insinto /usr/share/applications
