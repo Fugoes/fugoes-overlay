@@ -31,7 +31,8 @@ src_install() {
 	insinto /usr/share/icons
 	doins -r ${S}/usr/share/icons/hicolor
 
-	dosym /usr/bin/typora ../share/typora/Typora
+	dodir /usr/bin
+	dosym -r typora ../share/typora/Typora
 }
 
 pkg_postinst(){
