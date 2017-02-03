@@ -10,7 +10,7 @@ LICENSE="Typora"
 SRC_URI="https://typora.io/./linux/typora_0.9.23_amd64.deb"
 S=${WORKDIR}
 
-src_complie() {
+src_compile() {
 	tar xf ${WORKDIR}/data.tar.xz
 	rm control.tar.gz data.tar.xz debian-binary
 	rm usr/doc usr/lintian -rf
