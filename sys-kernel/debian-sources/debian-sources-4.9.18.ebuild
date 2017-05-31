@@ -19,7 +19,7 @@ IUSE="binary"
 DEPEND="binary? ( >=sys-kernel/genkernel-3.4.40.7 )"
 DESCRIPTION="Debian Sources (and optional binary kernel)"
 HOMEPAGE="http://www.debian.org"
-SRC_URI="mirror://funtoo/${KERNEL_ARCHIVE} mirror://funtoo/${PATCH_ARCHIVE}"
+SRC_URI="https://ftp.osuosl.org/pub/funtoo/distfiles/${KERNEL_ARCHIVE} https://ftp.osuosl.org/pub/funtoo/distfiles/${PATCH_ARCHIVE}"
 S="$WORKDIR/linux-${CKV}"
 
 get_patch_list() {
