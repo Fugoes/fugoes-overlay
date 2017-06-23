@@ -8,14 +8,11 @@ inherit unpacker
 DESCRIPTION="Netease cloud music player"
 HOMEPAGE="http://music.163.com"
 COMMON_URI="http://s1.music.126.net/download/pc"
-SRC_URI="
-amd64? ( ${COMMON_URI}/${PN}_${PV}_amd64_ubuntu14.04.deb )
-x86? ( ${COMMON_URI}/${PN}_${PV}_i386_ubuntu14.04.deb )
-"
+SRC_URI="${COMMON_URI}/netease-cloud-music_1.0.0-2_amd64_ubuntu16.04.deb -> ${PN}_${PV}_amd64_ubuntu16.04.deb"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64"
 IUSE="gtkstyle hidpi"
 RESTRICT="mirror strip"
 
@@ -41,7 +38,7 @@ DEPEND="
 >=media-libs/taglib-1.9.1
 >=net-print/cups-1.4.0
 >=sys-apps/dbus-1.9.14
->=sys-devel/gcc-4.6
+>=sys-devel/gcc-5.2
 >=sys-libs/glibc-2.14
 >=sys-libs/zlib-1.2.3.3
 >=x11-libs/cairo-1.6.0
@@ -55,7 +52,7 @@ DEPEND="
 dev-qt/qtsql[sqlite]
 gtkstyle? ( >=dev-qt/qtgui-5.0.2[gtkstyle] )
 media-libs/libcue
-media-plugins/gst-plugins-meta:1.0
+>=media-plugins/gst-plugins-meta-1.10.5
 x11-libs/libXScrnSaver
 x11-libs/libXext
 x11-libs/libXfixes
@@ -77,7 +74,7 @@ src_install() {
 	dodir /usr/lib/${PN}
 	exeinto /usr/lib/${PN}
 	doexe ${S}/usr/lib/${PN}/chrome-sandbox
-	fperms 4755 /usr/lib/${PN}/chrome-sandbox
+	fperms 0755 /usr/lib/${PN}/chrome-sandbox
 	doexe ${S}/usr/lib/${PN}/netease-cloud-music
 
 	# fix HiDPI screen display
