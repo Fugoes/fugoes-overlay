@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <repositories version="1.0">
-<repo priority="50" status="unofficial">
-	<name>fugoes-overlay</name>
-	<description>Fugoes's Personal Gentoo Overlay</description>
-	<homepage>http://github.com/fugoes/fugoes-overlay</homepage>
-	<owner>
-		<email>fugoes.qa@gmail.com</email>
-		<name>Fugoes</name>
-	</owner>
-	<source type="git">git://github.com/fugoes/fugoes-overlay.git</source>
-</repo>
+	<repo priority="50" status="unofficial">
+		<name>fugoes</name>
+		<description>Fugoes's Personal Gentoo Overlay</description>
+		<homepage>http://github.com/fugoes/fugoes-overlay</homepage>
+		<owner>
+			<email>fugoes.qa@gmail.com</email>
+			<name>Fugoes</name>
+		</owner>
+		<source type="git">git://github.com/fugoes/fugoes-overlay.git</source>
+		<source type="git">https://github.com/fugoes/fugoes-overlay.git</source>
+	</repo>
 </repositories>
