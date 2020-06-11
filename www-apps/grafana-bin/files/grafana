@@ -1,0 +1,34 @@
+#!/sbin/openrc-run
+# Copyright 2020 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+depend() {
+	need localmount
+}
+
+start() {
+	ebegin "Starting grafana server"
+
+	checkpath -d -o "grafana:grafana" -m750 "/var/lib/grafana/dashboards"
+	checkpath -d -o "grafana:grafana" -m750 "/var/lib/grafana/plugins"
+	checkpath -d -o "grafana:grafana" -m750 "/var/lib/grafana/sessions"
+
+	start-stop-daemon --start -b -m \
+		--pidfile /run/grafana.pid \
+		--chdir /usr/share/grafana \
+		--user grafana:grafana \
+		--exec /usr/bin/grafana-server -- \
+		-config=/etc/grafana/grafana.ini \
+		cfg:default.paths.data=/var/lib/grafana \
+		cfg:default.paths.logs=/var/log/grafana
+
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping grafana server"
+
+	start-stop-daemon --stop --pidfile /run/grafana.pid --user grafana --retry=TERM/20/KILL/5
+
+	eend $?
+}
