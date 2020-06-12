@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <repositories version="1.0">
 	<repo priority="50" status="unofficial">
-		<name>fugoes-overlay</name>
+		<name>fugoes</name>
 		<description>Fugoes's Personal Gentoo Overlay</description>
 		<homepage>http://github.com/fugoes/fugoes-overlay</homepage>
 		<owner>
