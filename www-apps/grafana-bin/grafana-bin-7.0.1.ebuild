@@ -40,7 +40,8 @@ src_install() {
 	insinto /usr/share/${MY_PN}
 	doins -r *
 
-	doinitd "${FILESDIR}"/grafana
+	newconfd "${FILESDIR}"/grafana.confd grafana
+	newinitd "${FILESDIR}"/grafana.initd grafana
 
 	keepdir /var/{lib,log}/grafana
 	keepdir /var/lib/grafana/{dashboards,plugins}

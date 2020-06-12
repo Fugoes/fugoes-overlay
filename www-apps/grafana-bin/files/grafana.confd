@@ -1,0 +1,7 @@
+# /etc/conf.d/grafana: config file for grafana
+
+# The user to run your application as.
+GRAFANA_USER=grafana
+
+# The group to run your application as.
+GRAFANA_GROUP=grafana
