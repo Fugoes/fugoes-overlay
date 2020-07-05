@@ -10,13 +10,19 @@ SRC_URI="amd64? ( https://github.com/VSCodium/vscodium/releases/download/1.46.1/
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
+IUSE="vscode-marketplace"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
 S="${WORKDIR}"
+
+src_configure() {
+	if use vscode-marketplace; then
+		eapply "${FILESDIR}/vscode-marketplace.patch"
+	fi
+}
 
 src_install() {
 	dodir /opt/vscodium

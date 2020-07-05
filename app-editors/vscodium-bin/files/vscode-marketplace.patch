@@ -1,0 +1,15 @@
+diff --git a/resources/app/product.json b/resources/app/product.json
+index e162993..68f4912 100644
+--- a/resources/app/product.json
++++ b/resources/app/product.json
+@@ -121,8 +121,8 @@
+   "keyboardShortcutsUrlWin": "https://go.microsoft.com/fwlink/?linkid=832145",
+   "quality": "stable",
+   "extensionsGallery": {
+-    "serviceUrl": "https://open-vsx.org/vscode/gallery",
+-    "itemUrl": "https://open-vsx.org/vscode/item"
++    "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
++    "itemUrl": "https://marketplace.visualstudio.com/items"
+   },
+   "linkProtectionTrustedDomains": ["https://open-vsx.org"],
+   "serverDataFolderName": ".vscode-server-oss",
