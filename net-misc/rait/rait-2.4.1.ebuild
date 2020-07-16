@@ -186,6 +186,6 @@ src_compile() {
 }
 
 src_install() {
-	dobin RAIT-v${PV}/rait
+	dobin rait
 	einstalldocs
 }
