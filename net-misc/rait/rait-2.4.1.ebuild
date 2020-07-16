@@ -178,7 +178,7 @@ S="${WORKDIR}/RAIT-v${PV}"
 
 src_unpack() {
 	go-module_src_unpack
-	mv "${WORKDIR}/*" "${S}"
+	mv ${WORKDIR}/* "${S}"
 }
 
 src_compile() {
