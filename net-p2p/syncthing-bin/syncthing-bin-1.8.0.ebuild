@@ -12,8 +12,8 @@ S=${WORKDIR}/${MY_PN}-${KERNEL}-${ARCH}-v${MY_PV}
 DESCRIPTION="Syncthing is a continuous file synchronization program."
 HOMEPAGE="https://syncthing.net/"
 SRC_URI="
-	amd64? ( https://github.com/syncthing/syncthing/releases/download/v${MY_PV}/syncthing-linux-${ARCH}-v${MY_PV}.tar.gz )
-	arm64? ( https://github.com/syncthing/syncthing/releases/download/v${MY_PV}/syncthing-linux-${ARCH}-v${MY_PV}.tar.gz )"
+	amd64? ( https://github.com/syncthing/syncthing/releases/download/v${MY_PV}/syncthing-linux-amd64-v${MY_PV}.tar.gz )
+	arm64? ( https://github.com/syncthing/syncthing/releases/download/v${MY_PV}/syncthing-linux-arm64-v${MY_PV}.tar.gz )"
 
 LICENSE="Apache-2.0 BSD BSD-2 ISC MIT MPL-2.0 Unlicense"
 SLOT="0"
