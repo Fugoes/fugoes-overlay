@@ -26,8 +26,8 @@ src_install() {
 	insinto "/usr/include"
 	doins -r "include/tensorflow"
 	rm -rf "include"
-    insinto "/opt/tensorflow"
-    doins -r *
+	insinto "/opt/tensorflow"
+	doins -r *
 	cat > "${T}"/99tensorflow-c <<- EOF || die
 LDPATH="${EPREFIX}/opt/tensorflow/lib"
 	EOF
