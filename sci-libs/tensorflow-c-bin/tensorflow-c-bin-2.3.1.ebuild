@@ -18,7 +18,7 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-QA_PREBUILT="opt/tensorflow-c"
+QA_PREBUILT="opt/tensorflow"
 
 S="${WORKDIR}"
 
