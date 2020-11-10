@@ -18,18 +18,12 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-QA_PREBUILT="opt/tensorflow"
-
 S="${WORKDIR}"
 
 src_install() {
 	insinto "/usr/include"
 	doins -r "include/tensorflow"
 	rm -rf "include"
-	insinto "/opt/tensorflow"
-	doins -r *
-	cat > "${T}"/99tensorflow-c <<- EOF || die
-LDPATH="${EPREFIX}/opt/tensorflow/lib"
-	EOF
-	doenvd "${T}"/99tensorflow-c
+	insinto "/usr/lib64"
+	doins -r lib/*
 }
