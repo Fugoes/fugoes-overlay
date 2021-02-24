@@ -7,7 +7,7 @@ inherit desktop eutils
 
 DESCRIPTION="Obsidian is a powerful knowledge base that works on top of a local folder of plain text Markdown files."
 HOMEPAGE="https://obsidian.md/"
-SRC_URI="https://github.com/obsidianmd/obsidian-releases/releases/download/v0.8.2/Obsidian-${PV}.AppImage"
+SRC_URI="https://github.com/obsidianmd/obsidian-releases/releases/download/v${PV}/Obsidian-${PV}.AppImage"
 
 LICENSE=""
 SLOT="0"
