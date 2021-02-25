@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit user
+inherit desktop go-module systemd user
 
 MY_PN=${PN/-bin/}
 MY_PV=${PV}
@@ -12,8 +12,8 @@ S=${WORKDIR}/${MY_PN}-${KERNEL}-${ARCH}-v${MY_PV}
 DESCRIPTION="Syncthing is a continuous file synchronization program."
 HOMEPAGE="https://syncthing.net/"
 SRC_URI="
-	amd64? ( https://github.com/syncthing/syncthing/releases/download/v${MY_PV}/syncthing-linux-${ARCH}-v1.6.1.tar.gz )
-	arm64? ( https://github.com/syncthing/syncthing/releases/download/v${MY_PV}/syncthing-linux-${ARCH}-v1.6.1.tar.gz )"
+	amd64? ( https://github.com/syncthing/syncthing/releases/download/v${MY_PV}/syncthing-linux-amd64-v${MY_PV}.tar.gz )
+	arm64? ( https://github.com/syncthing/syncthing/releases/download/v${MY_PV}/syncthing-linux-arm64-v${MY_PV}.tar.gz )"
 
 LICENSE="Apache-2.0 BSD BSD-2 ISC MIT MPL-2.0 Unlicense"
 SLOT="0"
@@ -30,6 +30,8 @@ pkg_setup() {
 src_install() {
 	into /usr
 	dobin syncthing
+	systemd_dounit etc/linux-systemd/system/syncthing{@,-resume}.service
+	systemd_douserunit etc/linux-systemd/user/syncthing.service
 	newconfd "${FILESDIR}/syncthing.confd" syncthing
 	newinitd "${FILESDIR}/syncthing.initd" syncthing
 	keepdir /var/{lib,log}/syncthing
