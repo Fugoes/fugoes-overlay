@@ -17,6 +17,7 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 S="${WORKDIR}/Zotero_linux-x86_64"
+QA_PREBUILT="*"
 
 src_install() {
 	mkdir -p "${D}/opt/zotero"
